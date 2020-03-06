@@ -1,0 +1,11 @@
+C:\Users\Pramod\Projects\Connect\Connect\bin\Release\netcoreapp3.1\Connect.exe
+C:\Users\Pramod\Projects\Connect\Connect\bin\Release\netcoreapp3.1\Connect.deps.json
+C:\Users\Pramod\Projects\Connect\Connect\bin\Release\netcoreapp3.1\Connect.runtimeconfig.json
+C:\Users\Pramod\Projects\Connect\Connect\bin\Release\netcoreapp3.1\Connect.runtimeconfig.dev.json
+C:\Users\Pramod\Projects\Connect\Connect\bin\Release\netcoreapp3.1\Connect.dll
+C:\Users\Pramod\Projects\Connect\Connect\bin\Release\netcoreapp3.1\Connect.pdb
+C:\Users\Pramod\Projects\Connect\Connect\obj\Release\netcoreapp3.1\Connect.csprojAssemblyReference.cache
+C:\Users\Pramod\Projects\Connect\Connect\obj\Release\netcoreapp3.1\Connect.AssemblyInfoInputs.cache
+C:\Users\Pramod\Projects\Connect\Connect\obj\Release\netcoreapp3.1\Connect.AssemblyInfo.cs
+C:\Users\Pramod\Projects\Connect\Connect\obj\Release\netcoreapp3.1\Connect.dll
+C:\Users\Pramod\Projects\Connect\Connect\obj\Release\netcoreapp3.1\Connect.pdb

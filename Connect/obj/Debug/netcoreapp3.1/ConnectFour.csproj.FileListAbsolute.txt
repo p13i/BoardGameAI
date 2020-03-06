@@ -1,0 +1,14 @@
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\ConnectFour.exe
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\ConnectFour.deps.json
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\ConnectFour.runtimeconfig.json
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\ConnectFour.runtimeconfig.dev.json
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\ConnectFour.dll
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\ConnectFour.pdb
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\Pramod\Projects\Connect\Connect\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\Pramod\Projects\Connect\Connect\obj\Debug\netcoreapp3.1\ConnectFour.csprojAssemblyReference.cache
+C:\Users\Pramod\Projects\Connect\Connect\obj\Debug\netcoreapp3.1\ConnectFour.AssemblyInfoInputs.cache
+C:\Users\Pramod\Projects\Connect\Connect\obj\Debug\netcoreapp3.1\ConnectFour.AssemblyInfo.cs
+C:\Users\Pramod\Projects\Connect\Connect\obj\Debug\netcoreapp3.1\ConnectFour.csproj.CopyComplete
+C:\Users\Pramod\Projects\Connect\Connect\obj\Debug\netcoreapp3.1\ConnectFour.dll
+C:\Users\Pramod\Projects\Connect\Connect\obj\Debug\netcoreapp3.1\ConnectFour.pdb

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ai pramod": {
+      "commandName": "Project",
+      "commandLineArgs": "ai pramod"
+    },
+    "ai ai": {
+      "commandName": "Project",
+      "commandLineArgs": "ai ai"
+    }
+  }
+}
