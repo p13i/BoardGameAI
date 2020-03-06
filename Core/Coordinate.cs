@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TicTacToe
+namespace BoardGameAI.Core
 {
     public struct Coordinate
     {

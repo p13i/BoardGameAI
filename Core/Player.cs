@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TicTacToe
+namespace BoardGameAI.Core
 {
-    public abstract class Player
+    public abstract class Player<TToken>
     {
-        public Player(string name, Token token)
+        public Player(string name, TToken token)
         {
             Name = name;
             Token = token;
         }
 
         public string Name { get; }
-        public Token Token { get; }
+        public TToken Token { get; }
 
         public override int GetHashCode()
         {
@@ -28,7 +28,7 @@ namespace TicTacToe
             }
             else
             {
-                Player p = (Player)obj;
+                Player<TToken> p = (Player<TToken>)obj;
                 return Name.Equals(p.Name) && Token.Equals(p.Token);
             }
         }
@@ -38,8 +38,8 @@ namespace TicTacToe
             return $"{Name} ({Token.ToString()})";
         }
 
-        public abstract Move GetNextMove(TicTacToe game);
+        public abstract Move<TToken> GetNextMove(IBoardGame<TToken> game);
 
-        public abstract Player Clone();
+        public abstract Player<TToken> Clone();
     }
 }

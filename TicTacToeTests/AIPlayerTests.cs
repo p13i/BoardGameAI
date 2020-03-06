@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using TicTacToe;
 using System.Linq;
+using BoardGameAI.Core;
+using TicTacToe.Game;
 
 namespace TicTacToeTests
 {
@@ -9,7 +11,7 @@ namespace TicTacToeTests
         [Test]
         public void Test_GetChildStates_EmptyBoard()
         {
-            (Move, TicTacToe.TicTacToe)[] expected = {
+            (Move<TicTacToeToken>, TicTacToeGame)[] expected = {
                 GetChildState(X, new Coordinate(1, 1)),
                 GetChildState(X, new Coordinate(1, 2)),
                 GetChildState(X, new Coordinate(1, 3)),
@@ -21,7 +23,7 @@ namespace TicTacToeTests
                 GetChildState(X, new Coordinate(3, 3)),
             };
 
-            (Move, TicTacToe.TicTacToe)[] children = AIPlayer.GetChildGameStates(Game).ToArray();
+            (Move<TicTacToeToken>, IMinimaxGame<TicTacToeToken>)[] children = Game.GetChildGameStates().ToArray();
 
             Assert.IsNotNull(children);
             CollectionAssert.AreEqual(expected, children);
@@ -30,12 +32,12 @@ namespace TicTacToeTests
         [Test]
         public void Test_GetChildStates_FourMoves()
         {
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 2))));
 
-            (Move, TicTacToe.TicTacToe)[] expected = {
+            (Move<TicTacToeToken>, TicTacToeGame)[] expected = {
                 GetChildState(X, new Coordinate(1, 3)),
                 GetChildState(X, new Coordinate(2, 1)),
                 GetChildState(X, new Coordinate(2, 3)),
@@ -43,7 +45,7 @@ namespace TicTacToeTests
                 GetChildState(X, new Coordinate(3, 3)),
             };
 
-            (Move, TicTacToe.TicTacToe)[] children = AIPlayer.GetChildGameStates(Game).ToArray();
+            (Move<TicTacToeToken>, IMinimaxGame<TicTacToeToken>)[] children = Game.GetChildGameStates().ToArray();
 
             Assert.IsNotNull(children);
             CollectionAssert.AreEqual(expected, children);
@@ -52,20 +54,20 @@ namespace TicTacToeTests
         [Test]
         public void Test_GetChildStates_EightMoves()
         {
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(2, 3))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 3))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(3, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(2, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(3, 2))));
 
-            (Move, TicTacToe.TicTacToe)[] expected = {
+            (Move<TicTacToeToken>, TicTacToeGame)[] expected = {
                 GetChildState(X, new Coordinate(1, 3)),
             };
 
-            (Move, TicTacToe.TicTacToe)[] children = AIPlayer.GetChildGameStates(Game).ToArray();
+            (Move<TicTacToeToken>, IMinimaxGame<TicTacToeToken>)[] children = Game.GetChildGameStates().ToArray();
 
             Assert.IsNotNull(children);
             CollectionAssert.AreEqual(expected, children);
@@ -74,24 +76,24 @@ namespace TicTacToeTests
         [Test]
         public void Test_GetChildStates_NineMoves()
         {
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 1))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(2, 3))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 3))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(3, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(1, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(2, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(3, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(1, 3))));
 
-            (Move, TicTacToe.TicTacToe)[] expected = { };
+            (Move<TicTacToeToken>, TicTacToeGame)[] expected = { };
 
-            (Move, TicTacToe.TicTacToe)[] children = AIPlayer.GetChildGameStates(Game).ToArray();
+            (Move<TicTacToeToken>, IMinimaxGame<TicTacToeToken>)[] children = Game.GetChildGameStates().ToArray();
 
             Assert.IsNotNull(children);
             CollectionAssert.AreEqual(expected, children);
 
-            Assert.IsTrue(Game.IsGameOver(out Player winningPlayer));
+            Assert.IsTrue(Game.IsGameOver(out Player<TicTacToeToken> winningPlayer));
 
             Assert.AreEqual(X, winningPlayer);
 
@@ -102,40 +104,40 @@ namespace TicTacToeTests
              */
         }
 
-        private (Move, TicTacToe.TicTacToe) GetChildState(Player player, Coordinate coordinate)
+        private (Move<TicTacToeToken>, TicTacToeGame) GetChildState(Player<TicTacToeToken> player, Coordinate coordinate)
         {
-            TicTacToe.TicTacToe game = Game.Clone();
-            Move move = new Move(player, coordinate);
-            Assert.IsTrue(game.TryMove(move));
+            TicTacToeGame game = (TicTacToeGame) Game.Clone();
+            Move<TicTacToeToken> move = new Move<TicTacToeToken>(player, coordinate);
+            Assert.IsTrue((bool)game.TryMove(move));
             return (move, game);
         }
 
         [Test]
         public void Test_Evaluation_PlayerWins()
         {
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(1, 3))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 3))));
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(2, 2))));
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(1, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(2, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 3))));
 
-            Assert.IsTrue(Game.IsGameOver(out Player winningPlayer));
+            Assert.IsTrue(Game.IsGameOver(out Player<TicTacToeToken> winningPlayer));
             Assert.AreEqual(X, winningPlayer);
 
-            Assert.AreEqual(100, AIPlayer.Evaluation(Game, X));
+            Assert.AreEqual(100, Game.Evaluation(X));
             // expected = -100 [loss of game] + 10 [bonus for center] * 4 [number of windows that contain center]
-            Assert.AreEqual(-100 + 10 * 4, AIPlayer.Evaluation(Game, O));
+            Assert.AreEqual(-80 + 10 * 4, Game.Evaluation(O));
         }
 
         [Test]
         public void Test_GetNextMove()
         {
-            Assert.IsTrue(X is AIPlayer);
+            Assert.IsTrue(X is MinimaxTicTacToePlayer);
 
-            AIPlayer x = (AIPlayer)X;
+            MinimaxTicTacToePlayer x = (MinimaxTicTacToePlayer)X;
 
-            Move expected = new Move(X, new Coordinate(2, 2));
-            Move actual = x.GetNextMove(Game);
+            Move<TicTacToeToken> expected = new Move<TicTacToeToken>(X, new Coordinate(2, 2));
+            Move<TicTacToeToken> actual = x.GetNextMove(Game);
 
             Assert.AreEqual(expected, actual, "The AI should choose to play in the center first");
         }

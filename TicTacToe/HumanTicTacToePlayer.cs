@@ -1,17 +1,19 @@
 ﻿using System;
+using BoardGameAI.Core;
 
 namespace TicTacToe
 {
-    public sealed class HumanPlayer : Player
+    public sealed class HumanTicTacToePlayer : Player<TicTacToeToken>
     {
-        public HumanPlayer(string name, Token token) : base(name, token) { }
+        public HumanTicTacToePlayer(string name, TicTacToeToken token) : base(name, token) { }
 
-        public override Player Clone()
+
+        public override Player<TicTacToeToken> Clone()
         {
-            return new HumanPlayer(Name, Token);
+            return new HumanTicTacToePlayer(Name, Token);
         }
 
-        public override Move GetNextMove(TicTacToe game)
+        public Move<TicTacToeToken> GetNextMove(TicTacToeGame game)
         {
             string input;
             Coordinate result;
@@ -23,7 +25,12 @@ namespace TicTacToe
             }
             while (!TryGetCoordinate(input, out result));
 
-            return new Move(this, result);
+            return new Move<TicTacToeToken>(this, result);
+        }
+
+        public override Move<TicTacToeToken> GetNextMove(IBoardGame<TicTacToeToken> game)
+        {
+            return GetNextMove((TicTacToeGame) game);
         }
 
         private bool TryGetCoordinate(string input, out Coordinate coordinate)

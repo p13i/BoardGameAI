@@ -95,3 +95,5 @@ C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToeTests\obj\Debug\netcoreapp
 C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToeTests\obj\Debug\netcoreapp3.1\TicTacToeTests.csproj.CopyComplete
 C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToeTests\obj\Debug\netcoreapp3.1\TicTacToeTests.dll
 C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToeTests\obj\Debug\netcoreapp3.1\TicTacToeTests.pdb
+C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToeTests\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToeTests\bin\Debug\netcoreapp3.1\Core.pdb

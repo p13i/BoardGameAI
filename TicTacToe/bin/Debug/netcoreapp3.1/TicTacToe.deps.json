@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "TicTacToe/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
           "NUnit": "3.12.0"
         },
         "runtime": {
@@ -29,6 +30,11 @@
             "assemblyVersion": "3.12.0.0",
             "fileVersion": "3.12.0.0"
           }
+        }
+      },
+      "Core/1.0.0": {
+        "runtime": {
+          "Core.dll": {}
         }
       }
     }
@@ -59,6 +65,11 @@
       "sha512": "sha512-3oJTrcUcT9wmweBUwgUf0f1XIYy6RZq2ziV+RM95HMKAJGsHPN2i3MKK1dAPvDPMRLz799Llj4eyu/STB9Q7OA==",
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

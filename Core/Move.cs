@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TicTacToe
+namespace BoardGameAI.Core
 {
-    public sealed class Move
+    public sealed class Move<TToken>
     {
-        public static readonly Move Default = new Move(default, default);
+        public static readonly Move<TToken> Default = new Move<TToken>(default, default);
 
-        public Move(Player player, Coordinate coordinate)
+        public Move(Player<TToken> player, Coordinate coordinate)
         {
             Player = player;
             Coordinate = coordinate;
         }
 
-        public Player Player { get; }
+        public Player<TToken> Player { get; }
         public Coordinate Coordinate { get; }
 
         public override int GetHashCode()
@@ -24,12 +24,12 @@ namespace TicTacToe
 
         public override bool Equals(object obj)
         {
-            if (!(obj is Move))
+            if (!(obj is Move<TToken>))
             {
                 return false;
             }
 
-            Move other = (Move) obj;
+            Move<TToken> other = (Move<TToken>) obj;
 
             return Equals(Player, other.Player) && Equals(Coordinate, other.Coordinate);
         }

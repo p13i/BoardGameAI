@@ -1,18 +1,20 @@
 ﻿using System;
+using BoardGameAI.Core;
+using TicTacToe.Game;
 
 namespace TicTacToe
 {
     class Program
     {
-        private static Player GetPlayer(string arg, Token token)
+        private static Player<TicTacToeToken> GetPlayer(string arg, TicTacToeToken token)
         {
             if (arg.Contains("ai", StringComparison.InvariantCultureIgnoreCase))
             {
-                return new AIPlayer("player-1 (AI)", token);
+                return new MinimaxTicTacToePlayer("player-1 (AI)", token);
             }
             else
             {
-                return new HumanPlayer($"player-1 ({arg})", token);
+                return new HumanTicTacToePlayer($"player-1 ({arg})", token);
             }
         }
 
@@ -27,17 +29,17 @@ namespace TicTacToe
 
             Console.WriteLine("Tic Tac Toe");
 
-            Player playerOne = GetPlayer(args[0], Token.X);
+            Player<TicTacToeToken> playerOne = GetPlayer(args[0], TicTacToeToken.X);
 
-            Player playerTwo = GetPlayer(args[1], Token.O);
+            Player<TicTacToeToken> playerTwo = GetPlayer(args[1], TicTacToeToken.O);
 
-            TicTacToe game = new TicTacToe(playerOne, playerTwo);
+            TicTacToeGame game = new TicTacToeGame(playerOne, playerTwo);
 
-            Player winningPlayer;
+            Player<TicTacToeToken> winningPlayer;
 
             do
             {
-                Move nextMove;
+                Move<TicTacToeToken> nextMove;
                 do
                 {
                     nextMove = game.CurrentPlayer.GetNextMove(game);

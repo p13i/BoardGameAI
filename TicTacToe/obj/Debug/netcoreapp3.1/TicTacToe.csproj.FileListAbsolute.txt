@@ -11,3 +11,5 @@ C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToe\obj\Debug\netcoreapp3.1\T
 C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToe\obj\Debug\netcoreapp3.1\TicTacToe.pdb
 C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToe\bin\Debug\netcoreapp3.1\nunit.framework.dll
 C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToe\obj\Debug\netcoreapp3.1\TicTacToe.csproj.CopyComplete
+C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToe\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\Pramod\Projects\TicTacToe\TicTacToe\TicTacToe\bin\Debug\netcoreapp3.1\Core.pdb

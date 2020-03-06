@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace TicTacToe
+namespace BoardGameAI.Core
 {
     public class Grid<T>
     {

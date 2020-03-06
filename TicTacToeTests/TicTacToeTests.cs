@@ -1,3 +1,4 @@
+using BoardGameAI.Core;
 using NUnit.Framework;
 using TicTacToe;
 
@@ -8,7 +9,7 @@ namespace TicTacToeTests
         [Test]
         public void Test_IsGameOver_PlayerOneWins()
         {
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 2))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -17,7 +18,7 @@ namespace TicTacToeTests
              * | | | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 1))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -26,7 +27,7 @@ namespace TicTacToeTests
              * |O| | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(1, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(1, 2))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -35,7 +36,7 @@ namespace TicTacToeTests
              * |O| | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 3))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -44,8 +45,8 @@ namespace TicTacToeTests
              * |O| | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 2))));
-            Assert.IsTrue(Game.IsGameOver(out Player winningPlayer));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 2))));
+            Assert.IsTrue(Game.IsGameOver(out Player<TicTacToeToken> winningPlayer));
             Assert.AreEqual(X, winningPlayer);
 
             /*
@@ -59,7 +60,7 @@ namespace TicTacToeTests
         [Test]
         public void Test_IsGameOver_Draw()
         {
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 2))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -68,7 +69,7 @@ namespace TicTacToeTests
              * | | | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 1))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -77,7 +78,7 @@ namespace TicTacToeTests
              * |O| | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(1, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(1, 2))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -86,7 +87,7 @@ namespace TicTacToeTests
              * |O| | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(1, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(1, 3))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -96,7 +97,7 @@ namespace TicTacToeTests
              */
 
 
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(2, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(2, 3))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -105,7 +106,7 @@ namespace TicTacToeTests
              * |O| | |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(2, 1))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(2, 1))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -114,7 +115,7 @@ namespace TicTacToeTests
              * |O|O| |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 3))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 3))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -123,7 +124,7 @@ namespace TicTacToeTests
              * |O|O| |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(O, new Coordinate(3, 2))));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(O, new Coordinate(3, 2))));
             Assert.IsFalse(Game.IsGameOver(out _));
 
             /*
@@ -132,8 +133,8 @@ namespace TicTacToeTests
              * |O|O| |
              */
 
-            Assert.IsTrue(Game.TryMove(new Move(X, new Coordinate(3, 1))));
-            Assert.IsTrue(Game.IsGameOver(out Player winningPlayer));
+            Assert.IsTrue(Game.TryMove(new Move<TicTacToeToken>(X, new Coordinate(3, 1))));
+            Assert.IsTrue(Game.IsGameOver(out Player<TicTacToeToken> winningPlayer));
             Assert.IsNull(winningPlayer);
 
             /*
