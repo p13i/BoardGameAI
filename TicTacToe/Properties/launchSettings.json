@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "TicTacToe": {
+      "commandName": "Project"
+    },
+    "ai pramod": {
+      "commandName": "Project",
+      "commandLineArgs": "ai pramod"
+    },
+    "ai ai": {
+      "commandName": "Project",
+      "commandLineArgs": "ai ai"
+    },
+    "preeti ai": {
+      "commandName": "Project",
+      "commandLineArgs": "preeti ai"
+    }
+  }
+}
